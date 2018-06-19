@@ -73,7 +73,7 @@ function (_Component) {
       open: false,
       transitionEnter: true
     }, _this.handleMonthChange = function (months) {
-      var direction = months >= 0 ? 'left' : 'right';
+      var direction = months >= 0 ? 'left' : 'right;';
 
       _this.setState({
         transitionDirection: direction,

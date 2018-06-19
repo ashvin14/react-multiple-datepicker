@@ -62,7 +62,7 @@ function (_Component) {
 
     _classCallCheck(this, DatePicker);
 
-    _this = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props));
+    _this = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props)); //possiblity of passing  array 
 
     _this.onSelect = function (day) {
       var selectedDates = _this.state.selectedDates;
@@ -120,15 +120,22 @@ function (_Component) {
       });
     };
 
-    var def = props.selected || new Date();
+    var def = props.selectedDatesArray || new Date();
+    var predefaultUserDates = []; // spread operator is not working for dates , it is working for strings and Objects 
+
+    for (var predefaultDate in def) {
+      predefaultUserDates.push(_utils.default.clone(predefaultDate));
+    }
+
     _this.state = {
-      view: _utils.default.clone(def),
-      selected: _utils.default.clone(def),
-      selectedDates: props.selected ? [_utils.default.clone(def)] : [],
+      view: predefaultUserDates,
+      selected: predefaultUserDates,
+      selectedDates: props.selectedDatesArray ? predefaultUserDates : [],
       minDate: null,
       maxDate: null,
       open: false
-    };
+    }; //end //
+
     return _this;
   }
 

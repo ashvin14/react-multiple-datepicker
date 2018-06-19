@@ -78,7 +78,7 @@ class DatePicker extends Component {
     const predefaultUserDates = [];
 
       // spread operator is not working for dates , it is working for strings and Objects 
-    for( let predefaultDate of def )
+    for( let predefaultDate in def )
         predefaultUserDates.push(DateUtilities.clone(predefaultDate))
     
     this.state = {

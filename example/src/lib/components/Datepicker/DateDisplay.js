@@ -4,7 +4,7 @@ import { dateTimeFormat } from './dateUtils';
 
 const Root = styled.div`
   width: 165px;
-  height: 330px;
+  height: 341px;
   float: left;
   font-weight: 700;
   display: inline-block;

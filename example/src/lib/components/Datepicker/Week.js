@@ -50,7 +50,7 @@ const DayBackdrop = styled.div`
   background-color: rgb(0, 151, 167);
   height: 34px;
   border-radius: 50%;
-  left: 0;
+  left: 2px;
   opacity: ${({ selected }) => (selected ? '1' : '0')};
   position: absolute;
   top: 0;
@@ -64,6 +64,7 @@ const Day = styled.div`
   font-weight: ${({ today }) => (today ? 'bold' : '400')};
   font-size: ${({ today }) => (today ? '1.1rem' : 'auto')};
   position: relative;
+  left:4px;
   color: ${({ disabled }) => (disabled ? 'lightgrey' : 'auto')};
 `;
 
@@ -100,7 +101,6 @@ class Week extends Component {
             const isToday = day && dateToday === dateInNumberic.format(day);
             const isDisabled = this.isDisabled(day);
             const isSelected = this.isSelected(day);
-
             return (
               <DayButton
                 key={`day-${day}`}

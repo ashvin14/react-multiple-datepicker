@@ -82,14 +82,16 @@ class Calendar extends Component {
   }
 
   handleMonthChange = months => {
-    const direction = months >= 0 ? 'left' : 'right';
+    const direction = months >= 0 ? 'left' : 'right;';
     this.setState({
       transitionDirection: direction,
       displayDate: utils.addMonths(this.state.displayDate, months),
     });
   };
 
-  calendarRefs = {};
+  calendarRefs
+
+   = {};
 
   render() {
     const toolbarInteractions = this.getToolbarInteractions();
@@ -103,7 +105,7 @@ class Calendar extends Component {
               onMonthChange={this.handleMonthChange}
               prevMonth={toolbarInteractions.prevMonth}
               nextMonth={toolbarInteractions.nextMonth}
-            />
+            />  
             <WeekHeader />
             <Month
               view={this.props.view}

@@ -105,11 +105,7 @@ class DatePicker extends Component {
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
-
-  handleCancel = (e) => {
-    this.dismiss();
-  };
-
+  
   handleRequestClose = () => {
     this.dismiss();
   };
@@ -175,7 +171,7 @@ class DatePicker extends Component {
                   onSelect={this.onSelect}
                   minDate={this.props.minDate}
                   maxDate={this.props.maxDate}
-                  onCancel={this.handleCancel}
+                  onCancel={this.handleRequestClose}
                   onOk={this.handleOk}
                   onClear={this.handleClear}
                 />

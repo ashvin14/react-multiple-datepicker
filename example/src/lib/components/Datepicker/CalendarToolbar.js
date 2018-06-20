@@ -100,11 +100,9 @@ class CalendarToolbar extends Component {
         <Icon disabled={!this.props.prevMonth} onClick={this.handleTouchTapPrevMonth}>
           {String.fromCharCode(9664)}
         </Icon>
-
         <TitleDiv>
           <TitleText key={dateTimeFormatted}>{dateTimeFormatted}</TitleText>
         </TitleDiv>
-        
         <Icon disabled={!this.props.nextMonth} onClick={this.handleTouchTapNextMonth}>
           {String.fromCharCode(9654)}
         </Icon>

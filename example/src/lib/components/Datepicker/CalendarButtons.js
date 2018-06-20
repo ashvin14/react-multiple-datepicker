@@ -40,6 +40,7 @@ const Button = styled.button`
 
 const CalendarActionButton = props => (
   <Root>
+    <Button onClick={props.onClear} >Clear</Button>
     <Button onClick={props.onCancel}>Cancel</Button>
     <Button onClick={props.onOk}>Ok</Button>
   </Root>

@@ -62,6 +62,14 @@ class Calendar extends Component {
     }
   }
 
+  
+
+  componentDidUpdate(){
+    document.addEventListener('mousedown',this.handleClose)
+  }
+
+  
+
   getMinDate() {
     return this.props.minDate || utils.addYears(new Date(), -100);
   }
@@ -89,14 +97,20 @@ class Calendar extends Component {
     });
   };
 
-  calendarRefs
+  handleClose = ev =>{
+    let { calendarTarget } = this.calendarRefs;
+    if(calendarTarget.contains(ev.target))
+      return;
+    this.props.onCancel();
+  }
 
-   = {};
+  calendarRefs= {};
 
   render() {
     const toolbarInteractions = this.getToolbarInteractions();
     return (
-      <Root hideCalendarDate={this.props.hideCalendarDate} visible={this.props.visible}>
+      <Root hideCalendarDate={this.props.hideCalendarDate} visible={this.props.visible} 
+      innerRef={ref =>(this.calendarRefs.calendarTarget = ref)}> 
         <DateDisplay selectedDates={this.props.selectedDates} />
         <StyledCalendar>
           <CalendarContainer>
@@ -119,7 +133,7 @@ class Calendar extends Component {
               ref={ref => (this.calendarRefs.calendar = ref)}
             />
           </CalendarContainer>
-          <CalendarButtons onCancel={this.props.onCancel} onOk={this.props.onOk} />
+          <CalendarButtons onCancel={this.props.onCancel} onOk={this.props.onOk} onClear = {this.props.onClear}  />
         </StyledCalendar>
       </Root>
     );

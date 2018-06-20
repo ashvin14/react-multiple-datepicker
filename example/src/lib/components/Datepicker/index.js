@@ -72,11 +72,8 @@ class DatePicker extends Component {
     super(props);
 
     //possiblity of passing  array 
-   
     const def = props.selectedDatesArray || new Date();
-
     const predefaultUserDates = [];
-
       // spread operator is not working for dates , it is working for strings and Objects 
     for( let predefaultDate in def )
         predefaultUserDates.push(DateUtilities.clone(predefaultDate))
@@ -91,7 +88,6 @@ class DatePicker extends Component {
     };
     //end //
   }
-
 
   onSelect = day => {
     const { selectedDates } = this.state;
@@ -111,7 +107,6 @@ class DatePicker extends Component {
   };
 
   handleCancel = (e) => {
-    e.preventDefault()
     this.dismiss();
   };
 
@@ -127,6 +122,15 @@ class DatePicker extends Component {
 
     this.setState({
       open: false,
+    });
+  };
+
+  handleClear = (e) =>{
+    e.preventDefault();
+
+    this.setState({
+      selected:[],
+      selectedDates:[]
     });
   };
 
@@ -173,6 +177,7 @@ class DatePicker extends Component {
                   maxDate={this.props.maxDate}
                   onCancel={this.handleCancel}
                   onOk={this.handleOk}
+                  onClear={this.handleClear}
                 />
 
               </DialogContent>

@@ -21,36 +21,40 @@ const DayButton = styled.button`
   text-decoration: none;
   margin: 0;
   padding: 0.5rem;
+  flex-basis:30%;
   outline: none;
   font-size: inherit;
   font-weight: 400;
   position: relative;
   z-index: 1;
   background: none;
-  text-align: right;
+  text-align: left;
 `;
 
 const Blank = styled.div`
-  border: 10px;
+  border:  10px;
   box-sizing: border-box;
   display: inline-block;
   font-family: Roboto, sans-serif;
   text-decoration: none;
   margin: 0;
   padding: 0.5rem;
+  width:22.69px;
   outline: none;
   font-size: inherit;
   font-weight: 400;
   position: relative;
   z-index: 1;
   background: none;
+  flex-basis:30%;
+
 `;
 
 const DayBackdrop = styled.div`
   background-color: rgb(0, 151, 167);
   height: 34px;
   border-radius: 50%;
-  left: 2px;
+  left: -2px;
   opacity: ${({ selected }) => (selected ? '1' : '0')};
   position: absolute;
   top: 0;
@@ -64,8 +68,8 @@ const Day = styled.div`
   font-weight: ${({ today }) => (today ? 'bold' : '400')};
   font-size: ${({ today }) => (today ? '1.1rem' : 'auto')};
   position: relative;
-  left:4px;
-  color: ${({ disabled }) => (disabled ? 'lightgrey' : 'auto')};
+  box-sizing:border-box;
+   color: ${({ disabled }) => (disabled ? 'lightgrey' : 'auto')};
 `;
 
 class Week extends Component {
@@ -115,7 +119,9 @@ class Week extends Component {
               </DayButton>
             );
           }
-          return <Blank key={`blank-${i}`} />;
+          else {
+          return <Blank key={`blank-${i}`}/> ;  
+          }
         })}
       </StyledWeek>
     );

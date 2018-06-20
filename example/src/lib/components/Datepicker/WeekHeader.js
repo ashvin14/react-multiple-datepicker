@@ -9,11 +9,14 @@ const StyledDiv = styled.div`
   font-weight: 500;
   line-height: 1.25;
   opacity: 0.8;
-  text-align: center;
+  flex-basis:30%;
+  text-align: left;
+
 `;
 
 const StyledSpan = styled.span`
   padding: 0.5rem;
+  flex-basis:30%;
 `;
 
 const WeekHeader = () => (

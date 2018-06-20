@@ -89,9 +89,7 @@ class Calendar extends Component {
     });
   };
 
-  calendarRefs
-
-   = {};
+  calendarRefs= {};
 
   render() {
     const toolbarInteractions = this.getToolbarInteractions();

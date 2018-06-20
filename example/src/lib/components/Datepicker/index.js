@@ -105,7 +105,7 @@ class DatePicker extends Component {
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
-  
+
   handleRequestClose = () => {
     this.dismiss();
   };

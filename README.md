@@ -8,11 +8,21 @@ Let's the user pick more than one date from the date picker.
 
 After looking at various date picking libraries out there I couldn't find a single one who lets users pick more than one date without enforcing a range, so I decided to write one myself.
 
-## Usage
+## installation
+
+```
+npm install react-multiple-datepicker --save
+
+```
+
+OR
 
 ```
 yarn add react-multiple-datepicker
+
 ```
+## Usage
+
 
 ```javascript
 import MultipleDatePicker from 'react-multiple-datepicker'
@@ -24,6 +34,8 @@ render() {
   />
 }
 ```
+## Example 
+
 
 ## Roadmap
 
@@ -34,3 +46,4 @@ render() {
 ## Note From Author
 
 Hi, thanks for checking out this library. You can read more about me at https://bilalbudhani.com/about or you can follow me at https://twitter.com/BilalBudhani
+

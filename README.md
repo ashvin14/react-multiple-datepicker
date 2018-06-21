@@ -35,20 +35,25 @@ render() {
 }
 ```
 ## Api
- <b>props</b>
- <ul>
-    <li>onSubmit</li>
-     A callback function used to get selected dates as paramters.
-     ```javascript
-        import MultipleDatePicker from 'react-multiple-datepicker'
-        render() {
-          <MultipleDatePicker
-            onSubmit={dates => console.log('selected date', dates)}
-          />
-        }
-     ```
+### props
+* onSubmit
 
- </ul>
+   A callback function which has selected dates from Component as Argument
+ 
+
+* selectedDatesArray
+   
+   takes array of dates ,and prefills the component with those dates.
+   ```javascript
+   import MultipleDatePicker from "react-multiple-datepicker"
+
+   render(){
+    <MultipleDatePicker
+        selectedDatesArray={[new Date("2018-10-01"),new Date("2018-10-07")]}
+    />
+   }
+   ```
+
 
 
 

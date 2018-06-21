@@ -34,7 +34,22 @@ render() {
   />
 }
 ```
-## Example 
+## Api
+ <b>props</b>
+ <ul>
+    <li>onSubmit</li>
+     A callback function used to get selected dates as paramters.
+     ```javascript
+        import MultipleDatePicker from 'react-multiple-datepicker'
+        render() {
+          <MultipleDatePicker
+            onSubmit={dates => console.log('selected date', dates)}
+          />
+        }
+     ```
+
+ </ul>
+
 
 
 ## Roadmap

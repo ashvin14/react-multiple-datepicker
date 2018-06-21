@@ -11,9 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <MultipleDatePicker
-        minDate={new Date("2018-10-01"),new Date("2018-10-07")}
-         />
+        <MultipleDatePicker onSubmit ={date => console.log("selected dates are, ",date)} />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>

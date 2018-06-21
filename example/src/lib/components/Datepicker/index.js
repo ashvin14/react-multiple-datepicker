@@ -82,8 +82,8 @@ class DatePicker extends Component {
       view: predefaultUserDates,
       selected: predefaultUserDates,
       selectedDates: props.selectedDatesArray ? predefaultUserDates : [],
-      minDate: null,
-      maxDate: null,
+      minDate: props.minDate || new Date(),
+      maxDate: props.maxDate || null,
       open: false,
     };
     //end //
@@ -107,6 +107,7 @@ class DatePicker extends Component {
   };
 
   handleRequestClose = () => {
+    this.handleClear();
     this.dismiss();
   };
 
@@ -121,8 +122,8 @@ class DatePicker extends Component {
     });
   };
 
-  handleClear = (e) =>{
-    e.preventDefault();
+  handleClear = () =>{
+   
 
     this.setState({
       selected:[],
@@ -169,8 +170,8 @@ class DatePicker extends Component {
                   selected={this.state.selected}
                   selectedDates={this.state.selectedDates}
                   onSelect={this.onSelect}
-                  minDate={this.props.minDate}
-                  maxDate={this.props.maxDate}
+                  minDate={this.state.minDate}
+                  maxDate={this.state.maxDate}
                   onCancel={this.handleRequestClose}
                   onOk={this.handleOk}
                   onClear={this.handleClear}

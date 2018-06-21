@@ -12,7 +12,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <MultipleDatePicker
-        selectedDatesArray={[new Date("2018-10-01"),new Date("2018-10-07")]}
+        minDate={new Date("2018-10-01"),new Date("2018-10-07")}
          />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.

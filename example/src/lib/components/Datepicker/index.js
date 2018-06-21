@@ -72,7 +72,7 @@ class DatePicker extends Component {
     super(props);
 
     //possiblity of passing  array 
-    const def = props.selectedDatesArray || new Date();
+    const def = props.selectedDatesArray || [new Date()];
     const predefaultUserDates = [];
       // spread operator is not working for dates , it is working for strings and Objects 
     for( let predefaultDate of def )

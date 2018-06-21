@@ -49,11 +49,52 @@ render() {
 
    render(){
     <MultipleDatePicker
-        selectedDatesArray={[new Date("2018-10-01"),new Date("2018-10-07")]}
-    />
+        selectedDatesArray={[new Date("2018-10-01"),new Date("2018-10-07")]} />
    }
    ```
 
+* minDate
+    renders the calender from specified minDate .accepts date value for prop.
+
+    ```javascript
+    import MultipleDatePicker from "react-multiple-datepicker";
+
+    render(){
+        <MultipleDatePicker 
+        minDate={new Date("2018-07-17")} />
+    }
+    ```
+
+* maxDate
+    renders the calender till specified maxDate .accepts date value for prop.
+
+    ```javascript
+    import MultipleDatePicker from "react-multiple-datepicker";
+
+    render(){
+        <MultipleDatePicker 
+        maxDate={new Date("2018-07-17")} />
+    }
+    ```
+
+### Child Components
+ you can add child Components , and it will render the child Components which when clicked on opens calendar Component.By default it renders input text.
+
+```javascript
+    import MultipleDatePicker from "react-multiple-datepicker";
+
+    render(){
+
+        return(
+            <MultipleDatePicker>    
+                <div>
+                    <h1> this is calendar</h1>
+                </div>
+            </MultipleDatePicker>
+        )
+    }
+
+```
 
 
 
